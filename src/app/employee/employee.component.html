@@ -1,0 +1,44 @@
+<p>employee works!</p>
+
+<ul>
+    <li *ngFor="let employee of findAll()"><a
+        [title]="employee.getName() + ' details'"
+        [routerLink]="['/employee', employee.getId()]">
+        {{ employee.getName()  }}
+      </a></li>
+    <!-- <li *ngFor="let e of findAll()">{{e.getName()}} - {{e.getId( )}}</li> -->
+</ul>
+
+
+<h3>Shipping Prices</h3>
+
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+  <span>{{ shipping.type }}</span>
+  <span>{{ shipping.price | currency }}</span>
+</div>
+
+
+<!-- <button (click)="getInfoEmp1()">Employee 1</button> -->
+<!-- <ul>
+    <li *ngFor="let e of emp1">{{e}}</li>
+</ul>
+
+<button (click)="getInfoEmp2()">Employee 2</button>
+<ul>
+    <li *ngFor="let e of emp2">{{e}}</li>
+</ul>
+
+<button (click)="getInfoEmp3()">Employee 3</button>
+<ul>
+    <li *ngFor="let e of emp3">{{e}}</li>
+</ul>
+
+<hr>
+<form #data="ngForm" (ngSubmit)="addInfo(data)">
+    <div class="form-group ml-2">
+        <label for="location">Info</label>
+        <input type="text" class="form-control w-25 m-3" name="location" id="location" ngModel>
+    </div>
+       
+    <button type="submit" class="btn btn-primary ml-2">Submit</button>
+</form> -->
